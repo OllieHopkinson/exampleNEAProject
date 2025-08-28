@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    To Do App - Sign Up
+{% endblock %}
+
+{% block content %}
+
+    <div>
+        <h1>todo.</h1>
+        <h2>Sign Up</h2>
+        <form action = '/auth/createuser' method = 'post'>
+            <div>
+                <label for = 'username'>Username:</label>
+                <input name = 'username' id = 'username' type = 'text' required minlength = '3'/>
+            </div>
+
+            <div>
+                <label for = 'password'>Password:</label>
+                <input name = 'password' id = 'password' type = 'password' required minlength = '8'/>
+            </div>
+
+            <div>
+                <label for = 'repassword'>Re-Enter Password:</label>
+                <input name = 'repassword' id = 'repassword' type = 'password' required minlength = '8'/>
+            </div>
+            
+            <div>
+                <input type = 'submit' value = 'Sign Up' />
+            </div>
+
+        </form>
+        <p>Already have an account? <a href = '/'>click here to sign in</a></p>
+        {% for message in messages %}
+            <p> {{ message }} </p>
+        {% endfor %}
+    </div>
+    <!-- <script>
+    function passBreak(password, repassword){
+        if (password != repassword){
+            return text = 'passwords must match'}
+    }
+    </script> -->
+
+
+{% endblock %}  
+    
