@@ -4,25 +4,29 @@
     To Do App - Sign Up
 {% endblock %}
 
+{% block head %}
+    <link rel = 'stylesheet' href = '{{ url_for("static", filename = "styles/signinandup.css") }}'>
+{% endblock %}
+
 {% block content %}
 
-    <div>
-        <h1>todo.</h1>
-        <h2>Sign Up</h2>
+    <div class = 'container'>
+        <h1 class="title">ToDo</h1>
+        <h2 class="subtitle">Sign Up</h2>
         <form action = '/auth/createuser' method = 'post'>
             <div>
-                <label for = 'username'>Username:</label>
-                <input name = 'username' id = 'username' type = 'text' required minlength = '3'/>
+                <!-- <label for = 'username'>Username:</label> -->
+                <input name = 'username' id = 'username' type = 'text' required minlength = '3' placeholder="Username"/>
             </div>
 
             <div>
-                <label for = 'password'>Password:</label>
-                <input name = 'password' id = 'password' type = 'password' required minlength = '8'/>
+                <!-- <label for = 'password'>Password:</label> -->
+                <input name = 'password' id = 'password' type = 'password' required minlength = '8'placeholder='Passwpord'/>
             </div>
 
             <div>
-                <label for = 'repassword'>Re-Enter Password:</label>
-                <input name = 'repassword' id = 'repassword' type = 'password' required minlength = '8'/>
+                <!-- <label for = 'repassword'>Re-Enter Password:</label> -->
+                <input name = 'repassword' id = 'repassword' type = 'password' required minlength = '8' placeholder="Repassword"/>
             </div>
             
             <div>
@@ -32,7 +36,7 @@
         </form>
         <p>Already have an account? <a href = '/'>click here to sign in</a></p>
         {% for message in messages %}
-            <p> {{ message }} </p>
+            <p class="error"> {{ message }} </p>
         {% endfor %}
     </div>
     <!-- <script>
